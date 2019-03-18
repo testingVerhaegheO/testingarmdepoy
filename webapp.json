@@ -19,8 +19,7 @@
     "variables": {
         "databaseName": "[concat(parameters('siteName'), 'database')]",
         "serverName": "[concat(parameters('siteName'), 'mysqlserver')]",
-        "hostingPlanName": "[concat(parameters('siteName'), 'serviceplan')]",
-        "serverID": "[concat(variables('servername'), uniqueString(resourceGroup().id))]"
+        "hostingPlanName": "[concat(parameters('siteName'), 'serviceplan')]"
     },
     "resources": [
         {
@@ -32,7 +31,7 @@
                     "connectionStrings": [
                         {
                             "name": "defaultConnection",
-                            "ConnectionString": "[concat('Database=', variables('databaseName'), ';Data Source=', referance(variables('serverName')).fullyQualifiedDomainName,';User Id=',parameters('administratorLogin'),'@',variables('serverName') ,';Password=',parameters('administratorLoginPassword'))]",
+                            "ConnectionString": "[concat('Database=', variables('databaseName'), ';Data Source=', variables('serverName'), '.mysql.database.azure.com',';User Id=',parameters('administratorLogin'),'@',variables('serverName') ,';Password=',parameters('administratorLoginPassword'))]",
                             "type": "MySql"
                         }
                     ]
@@ -44,8 +43,7 @@
             "apiVersion": "2016-08-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[variables('hostingPlanName')]",
-                "[variables('serverName')]"
+                "[variables('hostingPlanName')]"
             ]
         },
         {
