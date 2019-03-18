@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {   
     "siteName": {
-      "value": "testingwebapp03"
+      "value": "testingwebapp02"
     },
     "administratorLogin": {
       "value": "olivieradmin"
