@@ -24,6 +24,9 @@
             "apiVersion": "2017-05-10",
             "name": "webapp",
             "type": "Microsoft.Resources/deployments",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', 'mysqlserver')]"
+            ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
