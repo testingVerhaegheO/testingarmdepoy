@@ -4,6 +4,12 @@
   "parameters": {   
     "siteName": {
       "value": "testingwebapp02"
+    },
+    "administratorLogin": {
+      "value": "olivieradmin"
+    },
+    "administratorLoginPassword": {
+      "value": "Testing123!"
     }
   }
 }
