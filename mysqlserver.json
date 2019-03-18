@@ -95,9 +95,18 @@
             "metadata": {
                 "description": "Azure database for PostgreSQL sku family"
             }
+        },
+        "siteName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of azure web app"
+            }
         }
     },
-    "variables": {},
+    "variables": {
+        "databaseName": "[concat(parameters('siteName'), 'database')]",
+        "serverName": "[concat(parameters('siteName'), 'mysqlserver')]"
+    },
     "resources": [
         {
                 "apiVersion": "2017-12-01",
