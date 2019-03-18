@@ -160,11 +160,5 @@
                     }
                 ]
             }   
-    ],
-    "outputs": {
-        "administratorLogin": {
-            "type": "string",
-            "value": "[parameters('administratorLogin')]"
-        }
-    }
+    ]
 }
